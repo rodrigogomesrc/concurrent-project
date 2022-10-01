@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 
 import static org.apache.http.impl.client.HttpClients.createDefault;
 
-public class HttpRequests {
+public class RequestsService {
     public static final String ENDPOINT = "http://127.0.0.1:9011" ;
 
     public static String getString(String context) {
