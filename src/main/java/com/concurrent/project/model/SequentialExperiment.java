@@ -3,7 +3,7 @@ package com.concurrent.project.model;
 import com.concurrent.project.interfaces.Experiment;
 import com.concurrent.project.service.RequestsService;
 
-public class SequencialExperiment implements Experiment {
+public class SequentialExperiment implements Experiment {
 
     @Override
     public ExperimentResult runExperiment(int executions) {
