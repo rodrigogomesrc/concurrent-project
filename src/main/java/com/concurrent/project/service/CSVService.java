@@ -1,6 +1,6 @@
 package com.concurrent.project.service;
 
-import com.concurrent.project.model.Execution;
+import com.concurrent.project.model.ExperimentResult;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -33,8 +33,8 @@ public class CSVService {
         }
     }
 
-    public static void saveResult(Execution execution) {
-        String line = execution.getExecutions() + "," + execution.getTimeMillis() + "," + execution.getCategory() + "\n";
+    public static void saveResult(ExperimentResult experimentResult) {
+        String line = experimentResult.getExecutions() + "," + experimentResult.getTimeMillis() + "," + experimentResult.getCategory() + "\n";
         appendToCSV(line);
     }
 

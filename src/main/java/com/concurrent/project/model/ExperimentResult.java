@@ -1,12 +1,12 @@
 package com.concurrent.project.model;
 
-public class Execution {
+public class ExperimentResult {
 
     private int executions;
-    private int timeMillis;
+    private long timeMillis;
     private String category;
 
-    public Execution(int executions, int timeMillis, String category) {
+    public ExperimentResult(int executions, long timeMillis, String category) {
         this.executions = executions;
         this.timeMillis = timeMillis;
         this.category = category;
@@ -20,11 +20,11 @@ public class Execution {
         this.executions = executions;
     }
 
-    public int getTimeMillis() {
+    public long getTimeMillis() {
         return timeMillis;
     }
 
-    public void setTimeMillis(int timeMillis) {
+    public void setTimeMillis(long timeMillis) {
         this.timeMillis = timeMillis;
     }
 
@@ -34,5 +34,11 @@ public class Execution {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    @Override
+    public String toString() {
+        return "ExperimentResult [category=" + category + ", executions=" + executions + ", timeMillis=" + timeMillis
+                + "]";
     }
 }
