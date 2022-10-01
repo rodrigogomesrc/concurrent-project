@@ -1,4 +1,4 @@
-package com.concurrent.project.util;
+package com.concurrent.project.service;
 
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 
 import static org.apache.http.impl.client.HttpClients.createDefault;
 
-public class Requests {
+public class HttpRequests {
     public static final String ENDPOINT = "http://127.0.0.1:9011" ;
 
     public static String getString(String context) {
