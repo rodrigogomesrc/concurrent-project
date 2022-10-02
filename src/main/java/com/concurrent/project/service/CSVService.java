@@ -9,7 +9,7 @@ import java.nio.file.StandardOpenOption;
 
 public class CSVService {
 
-    private static final String filename = "./data/results.csv";
+    private static final String filename = "./data/results-concurrent.csv";
 
     private static void createFile() {
         try {

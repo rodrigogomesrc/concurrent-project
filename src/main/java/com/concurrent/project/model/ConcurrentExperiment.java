@@ -1,10 +1,7 @@
 package com.concurrent.project.model;
 
-import com.concurrent.project.interfaces.Experiment;
+public class ConcurrentExperiment extends RequestThread {
 
-public class ConcurrentExperiment extends RequestThread implements Experiment {
-
-    @Override
     public ExperimentResult runExperiment(int executions) {
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < executions; i++) {
