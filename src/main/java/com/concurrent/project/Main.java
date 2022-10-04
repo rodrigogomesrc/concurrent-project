@@ -11,9 +11,9 @@ public class Main {
 
         ConcurrentExperiment concurrent = new ConcurrentExperiment();
         CSVService.initCSV();
+        Scanner scanner = new Scanner(System.in);
         
         while (true) {
-            Scanner scanner = new Scanner(System.in);
             System.out.println("Digite o número de execuções (concorrente): ");
             int executions = scanner.nextInt();
             System.out.println("Executando...");
@@ -26,8 +26,8 @@ public class Main {
             if (!option.equals("1")) {
                 break;
             }
-            scanner.close();
         }
+        scanner.close();
 
     }
 }

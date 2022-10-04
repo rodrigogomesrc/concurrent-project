@@ -20,7 +20,5 @@ public class RequestThread extends Thread {
     @Override
     public void run() {
         String data = RequestsService.getString(url);
-        System.out.println("Thread number: " + threadNumber);
-        System.out.println(data);
     }
 }
