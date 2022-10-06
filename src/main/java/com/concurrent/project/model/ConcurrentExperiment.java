@@ -2,7 +2,7 @@ package com.concurrent.project.model;
 
 public class ConcurrentExperiment extends RequestThread {
 
-    public ExperimentResult runExperiment(int executions) {
+    public ExperimentResult runExperiment(int executions, int scenery) {
         long startTime = System.currentTimeMillis();
         for (int i = 0; i < executions; i++) {
             RequestThread requestThread = new RequestThread("/test.json", i);
@@ -15,6 +15,6 @@ public class ConcurrentExperiment extends RequestThread {
         }
         long endTime = System.currentTimeMillis();
         long timeMillis = endTime - startTime;
-        return new ExperimentResult(executions, timeMillis, "concurrent");
+        return new ExperimentResult(executions, timeMillis, "concurrent", scenery);
     }
 }

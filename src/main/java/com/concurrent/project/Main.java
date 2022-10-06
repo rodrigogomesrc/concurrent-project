@@ -1,6 +1,7 @@
 package com.concurrent.project;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.concurrent.project.model.ConcurrentExperiment;
 import com.concurrent.project.model.ExperimentResult;
@@ -10,24 +11,23 @@ public class Main {
     public static void main(String[] args) {
 
         ConcurrentExperiment concurrent = new ConcurrentExperiment();
-        CSVService.initCSV();
-        Scanner scanner = new Scanner(System.in);
-        
-        while (true) {
-            System.out.println("Digite o número de execuções (concorrente): ");
-            int executions = scanner.nextInt();
-            System.out.println("Executando...");
-            ExperimentResult result = concurrent.runExperiment(executions);
-            CSVService.saveResult(result);
-            System.out.println("Experimento finalizado!");
-
-            System.out.println("Digite 1 para continuar os experimentos ou qualquer outra coisa pra sair: ");
-            String option = scanner.next();
-            if (!option.equals("1")) {
-                break;
+        final int multiplicator = 20;
+    	int sceneryNumber = 0;
+    	ArrayList<Integer> scenerys = new ArrayList<Integer>(List.of(10, 100, 500, 1000));
+    	CSVService.initCSV();
+    
+    	
+    	System.out.println("Iniciando experimentos (Concorrente)");
+    	for (int i =0; i < scenerys.size(); i++) {
+    		sceneryNumber++;
+    		System.out.println("cenário: " + sceneryNumber + " requisições: " + scenerys.get(i));
+            for (int j = 0; j < multiplicator; j++) {
+            	System.out.println("Executando...");
+                ExperimentResult result = concurrent.runExperiment(scenerys.get(i), sceneryNumber);
+                CSVService.saveResult(result);
             }
-        }
-        scanner.close();
+    	}
+    	System.out.println("Fim dos experimentos");
 
     }
 }
